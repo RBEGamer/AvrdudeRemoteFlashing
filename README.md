@@ -1,5 +1,5 @@
 # AvrdudeRemoveFlashing
-![GitHub Logo](/documentation/logo.png)
+![GitHub Logo](/documentation/ch.png)
 A simple script to monitor `.hex`, `.eep` files and program it to the avr chip
 
 # FEATURES
