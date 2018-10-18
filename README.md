@@ -1,4 +1,5 @@
 # AvrdudeRemoveFlashing
+![GitHub Logo](/documentation/logo.png)
 A simple script to monitor `.hex`, `.eep` files and program it to the avr chip
 
 # FEATURES
@@ -43,6 +44,6 @@ So i added a PostBuildRule to copy the build files to the share via a windows co
 
 * hardcoded chip name: `copy $(MSBuildProjectDirectory)\Debug\$(AssemblyName).hex  C:\Users\root\Dropbox\testproj\Debug\_$(AssemblyName)_attiny2313_.hex`
 
-OR:
+## OR:
 
 * with atmel studio macro: `copy $(MSBuildProjectDirectory)\Debug\$(AssemblyName).hex  C:\Users\root\Dropbox\testproj\Debug\_$(AssemblyName)_$(avrdevice)_.hex`
