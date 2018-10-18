@@ -28,4 +28,6 @@ I setup a smb share and setup the `path_to_watch` path to it, so if AVRStudio ge
 After setup simply run `avrdude_flasher.py`
 
 
-
+# AtmelStudioSetup
+A AtmelStudioProject runs not very well on a FileShare i have noticed.
+So i added a PostBuildRule to copy the build files to the share via a windows copy command.
