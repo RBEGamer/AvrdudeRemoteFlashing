@@ -38,4 +38,11 @@ So a valid build file for an Attiny2313 is:
 
 # AtmelStudioSetup
 A AtmelStudioProject runs not very well on a FileShare i have noticed.
-So i added a PostBuildRule to copy the build files to the share via a windows copy command.
+So i added a PostBuildRule to copy the build files to the share via a windows copy command:
+
+
+* hardcoded chip name: `copy $(MSBuildProjectDirectory)\Debug\$(AssemblyName).hex  C:\Users\root\Dropbox\testproj\Debug\_$(AssemblyName)_attiny2313_.hex`
+
+OR:
+
+* with atmel studio macro: `copy $(MSBuildProjectDirectory)\Debug\$(AssemblyName).hex  C:\Users\root\Dropbox\testproj\Debug\_$(AssemblyName)_$(avrdevice)_.hex`
