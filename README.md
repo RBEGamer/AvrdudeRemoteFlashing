@@ -5,8 +5,8 @@ A simple script to monitor `.hex`, `.eep` files and program it to the avr chip
 
 # FEATURES
 * `.hex` and `.eep` flashing
-* file system monitoring (Build directory) for instant flahsh
-* works on RPI
+* file system monitoring (Build directory) for instant flash to the chip
+* works on RPI/Linux
 
 
 # NEEDED HARDWARE
@@ -15,17 +15,17 @@ A simple script to monitor `.hex`, `.eep` files and program it to the avr chip
 # USAGE
 modify the following lines to setup the system in `avrdude_flasher.py`:
 
-* `9 chip = "attiny2313"` define here the default chip if it not in the filename. See avrdude docu -p flag
-* `programmer = "usbasp"` define here your programming device. See avrdude docu for the -c flag
-* `path_to_watch = "./GccApplication3/GccApplication3/Debug"` define the path to watch for .hex files
+* `9 chip = "attiny2313"` define here the default chip if it not in the filename. See avrdude docu `-p` flag
+* `programmer = "usbasp"` define here your programming device. See avrdude docu for the `-c` flag
+* `path_to_watch = "./GccApplication3/GccApplication3/Debug"` define the path to watch for `.hex` files
 
 See at function flash for more configration flags.
 
 # SETUP
 Any linux system with `python2` and `avrdude` installed.
-I used a RPI Zero with an USBASP connected.
+I used a RPI Zero W with an USBASP connected.
 
-I setup a smb share and setup the `path_to_watch` path to it, so if AVRStudio generates a new build the pythonscript flashes the new file to the chip.
+I setup a smb share and setup the `path_to_watch` path to it, so if AtmelStudio generates a new build and the pythonscript flashes the new file to the chip on an other Computer.
 
 After setup simply run `avrdude_flasher.py`
 
