@@ -48,3 +48,15 @@ So i added a PostBuildRule to copy the build files to the share via a windows co
 ## OR:
 
 * with atmel studio macro: `copy $(MSBuildProjectDirectory)\Debug\$(AssemblyName).hex  C:\Users\root\Dropbox\testproj\Debug\_$(AssemblyName)_$(avrdevice)_.hex`
+
+## RUNNING MONITOR ON SMB SHARE
+If you want to watch `*.hex` files on smb shares you have to mount it on ubuntu into the filesystem.
+The normal Files-Application dont do that.
+So first you have to install `cifs-utils`
+* `sudo apt-get install cifs-utils`
+Create a local mounting folder
+* `sudo mkdir /mnt/tmp_dev_share`
+And mount the SMB Server to it (Here the smb share is on `192.168.1.23` and we want to mount the `/home/tmp` folder)
+* `sudo mount -t cifs //192.168.1.23/home/tmp /mnt/tmp_dev_share`
+
+The last step is to edit the `path_to_watch` Variable to `/mnt/tmp_dev_share`
