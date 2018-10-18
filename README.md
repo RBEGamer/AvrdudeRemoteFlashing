@@ -2,7 +2,7 @@
 A simple script to monitor `.hex`, `.eep` files and program it to the avr chip
 
 # FEATURES
-* .hex and .eep flashing
+* `.hex` and `.eep` flashing
 * file system monitoring (Build directory) for instant flahsh
 * works on RPI
 
@@ -20,7 +20,7 @@ modify the following lines to setup the system in `avrdude_flasher.py`:
 See at function flash for more configration flags.
 
 # SETUP
-Any linux system with python2 and avrdude installed.
+Any linux system with `python2` and `avrdude` installed.
 I used a RPI Zero with an USBASP connected.
 
 I setup a smb share and setup the `path_to_watch` path to it, so if AVRStudio generates a new build the pythonscript flashes the new file to the chip.
@@ -29,7 +29,7 @@ After setup simply run `avrdude_flasher.py`
 
 # BUILD FILESNAMES
 A feature is that the chip to programm can be determand in the filename, so you dont need to change the script.
-The filename for .hex and .eep need the following pattern:
+The filename for `.hex` and `.eep` need the following pattern:
 `_<projectname>_<chipname>_.hex` and `_<projectname>_<chipname>_.eep`
 So a valid build file for an Attiny2313 is:
 * HEX:`~/build/_ledblink_attiny2313_.hex` 
