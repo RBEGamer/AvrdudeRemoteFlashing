@@ -27,6 +27,14 @@ I setup a smb share and setup the `path_to_watch` path to it, so if AVRStudio ge
 
 After setup simply run `avrdude_flasher.py`
 
+# BUILD FILESNAMES
+A feature is that the chip to programm can be determand in the filename, so you dont need to change the script.
+The filename for .hex and .eep need the following pattern:
+`_<projectname>_<chipname>_.hex` and `_<projectname>_<chipname>_.eep`
+So a valid build file for an Attiny2313 is:
+* HEX:`~/build/_ledblink_attiny2313_.hex` 
+* EEP:`~/build/_ledblink_attiny2313_.eep` 
+
 
 # AtmelStudioSetup
 A AtmelStudioProject runs not very well on a FileShare i have noticed.
