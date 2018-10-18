@@ -1,5 +1,5 @@
 # AvrdudeRemoveFlashing
-A simple script to monitor .hex, .eep files and program it to the avr chip
+A simple script to monitor `.hex`, `.eep files and program it to the avr chip
 
 # FEATURES
 * .hex and .eep flashing
