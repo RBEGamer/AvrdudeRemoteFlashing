@@ -16,6 +16,11 @@ def files_to_timestamp(path):
     return dict ([(f, os.path.getmtime(f)) for f in files])
 
 
+def compile(_file):
+    #run avr-gcc
+    #build dir is smae folder
+    #main.cpp nicht löschen
+
 def flash(hex_file, eep_file):
     enable_flash_writing = True
     enable_eeprom_writing = False
@@ -31,7 +36,7 @@ def flash(hex_file, eep_file):
             sp = str(abs_path_hex).split("_")
             _len = len(sp)
             if _len >= 3:
-                chip_name = sp[_len-2]
+                chip_name = sp[_len-2].lower()
             else:
                 chip_name = chip
                 print("--- USING DEFUALT CHIP "+ chip_name + " -----")
@@ -49,7 +54,7 @@ def flash(hex_file, eep_file):
             sp = str(abs_path_eep).split("_")
             _len = len(sp)
             if _len >= 3:
-                chip_name = sp[_len-2]  
+                chip_name = sp[_len-2].lower()  
             else:
                 chip_name = chip
                 print("--- USING DEFUALT CHIP "+ chip_name + " -----")
@@ -88,6 +93,8 @@ if __name__ == "__main__":
                     flash(td,None)
                 if re.match(".*.eep$",td):
                     flash(None,td)
+                if re.match(".*.cpp$",td):
+                    compile(td) 
 
         if removed: print "Removed: ", ", ".join(removed)
 
@@ -98,4 +105,6 @@ if __name__ == "__main__":
                     flash(td,None)       
                 if re.match(".*.eep$",td):
                     flash(None,td) 
+                if re.match(".*.cpp$",td):
+                    compile(td) 
         before = after
